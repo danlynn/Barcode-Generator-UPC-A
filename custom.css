@@ -24,6 +24,7 @@ body {
 
 #upc-a {
 	margin: 0 30px 0 30px; /* quiet zones on left & right (10px *3) */
+    position: relative;
 }
 
 #upc-wrap {
@@ -89,6 +90,20 @@ body {
 
 #r-digits {
 	margin-left: 24px;
+}
+
+#number-system {
+    position: absolute;
+    top: 183px;
+    left: -21px;
+    font-size: 1.5em;
+}
+
+#check-digit {
+    position: absolute;
+    top: 183px;
+    left: 292px;
+    font-size: 1.5em;
 }
 
 #red-strike {

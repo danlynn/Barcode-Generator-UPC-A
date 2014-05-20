@@ -51,8 +51,10 @@ $(document).ready(function() {
 
 			// update digits displayed
 			// by rexfeng 2012
-				$('#l-digits').text(bcnum.slice(1,6));
+        $('#number-system').text(bcnum.slice(0,1));
+        $('#l-digits').text(bcnum.slice(1,6));
 				$('#r-digits').text(bcnum.slice(6,11));
+        $('#check-digit').text(diff);
 
 			// toggle hidden fields
 				$('#red-strike').hide(); // set hidden
