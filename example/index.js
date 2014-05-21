@@ -1,6 +1,7 @@
 $(document).ready(function() {
   
   var barcode_gen_upca = new BarcodeGenUPCA('#upc-container', '00000000000');
+  $('input[name=barcodenum]').focus();
   
 	$('input[name=barcodenum]').keyup(function() {
 		var barcode_number = $('input[name=barcodenum]').val();
