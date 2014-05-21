@@ -18,14 +18,14 @@ that jquery is required:
 ```html
 <head>
   <link rel="stylesheet" href="../barcode_gen_upc_a.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
   <script type="text/javascript" src="../barcode_gen_upc_a.js"></script>
 </head>
 ```
 
 Next, add a div container to your page where you would like to have the UPC-A 
-barcode to be inserted.  Note that the id of the div will be passed to the 
-javascript in the next step:
+barcode inserted.  Note that the id of the div will be passed to the javascript 
+in the next step:
 
 ```html
 <body>
@@ -66,6 +66,6 @@ it is 12 digits then the 12th (check-digit) will be verified against the first
 11 digits.
 
 ```javascript
-if (barcode_gen_upca.valid(barcode_number))
+if (!BarcodeGenUPCA.valid(barcode_number))
   console.log('Bad barcode number!');
 ```

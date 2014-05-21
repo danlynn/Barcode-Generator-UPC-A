@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>CSS Barcode</title>
+  <title>CSS Barcode</title>
   <link rel="stylesheet" href="../barcode_gen_upc_a.css">
   <link rel="stylesheet" href="index.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
   <script type="text/javascript" src="../barcode_gen_upc_a.js"></script>
-	<script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 
 <div id="upc-container"></div>
 <div id="query">
-	Enter barcode #: <input id="barcodenum" type="text" name="barcodenum" maxlength="12" placeholder="00000000000"/>
+  Enter barcode #: <input id="barcodenum" type="text" name="barcodenum" maxlength="12" placeholder="00000000000"/>
 
-	<p class="instructions">
+  <p class="instructions">
     <a href="http://www.barcodeisland.com/upca.phtml"><strong>UPC-A barcodes</strong></a> have 12 digits.
-	</p>
-	<p>
- 		First digit is UPC code type (number system). Next five is manufacturer number. 
+  </p>
+  <p>
+    First digit is UPC code type (number system). Next five is manufacturer number. 
     The next five is product number. Last digit is calculated check-digit.
-	</p>
-	<p>
-		This barcode generator accepts either 11 or 12 digits and prints either 10 
+  </p>
+  <p>
+    This barcode generator accepts either 11 or 12 digits and prints either 10 
     or 12 digits below the UCP image.  If 11 digits are passed to the generator
     then the 12th (check-digit) will be automagically added.  If 12 digits are 
     passed then that 12th digit will be validated to be the correct check-digit
@@ -31,18 +31,18 @@
     readable text below the barcode can be enabled or disabled depending on the 
     'display_outer_digits' value in the options hash passed to the constructor 
     (defaults to true). All 12 digits are always reflected in the barcode graphic.
-	</p>
+  </p>
   <p>
     Based on original work by rexfeng: 
     <a href="http://cssdeck.com/labs/css-barcode-upc-a-generator">
       http://cssdeck.com/labs/css-barcode-upc-a-generator
     </a>
   </p>
-	<p id="result">
-		You entered <span id="entered_bc"></span>. 
+  <p id="result">
+    You entered <span id="entered_bc"></span>. 
     The checksum digit was <span id="calc_check"></span>. 
     Your barcode above is encoded as <span id="all_digits"></span>.
-	</p>
+  </p>
 </div>
 
 </body>
