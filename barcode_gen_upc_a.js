@@ -95,8 +95,18 @@ BarcodeGenUPCA.prototype = {
       $('#check-digit').text(barcode_number.slice(11,12));
     
   },
-  
+
+  /**
+   * Calculate and return the check-digit for the specified 11 digit 
+   * 'barcode_number'.  If 'barcode_number' is not numeric and exactly 11 digits
+   * long then null is returned indicating an error.
+   * 
+   * @param barcode_number {string} 11 digit barcode number
+   * @returns {number} calculated check-digit - null if 'barcode_number' invalid
+   */
   get_check_digit: function(barcode_number) {
+    if (!/^\d{11}$/.test(barcode_number))
+      return null;
     var checksum_s1 = 0; //init odd holder
     var checksum_s2 = 0; //init even holder
     barcode_number.split('').forEach(function(val, i) {
@@ -109,7 +119,15 @@ BarcodeGenUPCA.prototype = {
     var s3_last = s3_string.substring(s3_string.length - 1);
     return s3_last == '0' ? 0 : 10 - parseInt(s3_last);
   },
-  
+
+  /**
+   * Validate that the specified 'barcode_number' is numeric and either 11 or 12
+   * digits long.  If 'barcode_number' is 12 digits long then the 12th digit is
+   * verified to be the valid check digit for the first 11 digits.
+   * 
+   * @param barcode_number {string} 11 or 12 digit barcode number to be validated
+   * @returns {boolean} true if valid - else false
+   */
   valid: function(barcode_number) {
     if (/^\d{11,12}$/.test(barcode_number))
       if (barcode_number.length == 12)
