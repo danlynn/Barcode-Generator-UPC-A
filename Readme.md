@@ -1,4 +1,4 @@
-# A pure html/css/js UPC-A barcode generator
+# UPC-A Barcode Generator
 
 ![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png)
 
