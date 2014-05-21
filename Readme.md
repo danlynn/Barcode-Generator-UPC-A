@@ -69,3 +69,17 @@ it is 12 digits then the 12th (check-digit) will be verified against the first
 if (!BarcodeGenUPCA.valid(barcode_number))
   console.log('Bad barcode number!');
 ```
+
+## Configuration Options
+
+Currently the only configuration option that can be passed into the options hash
+when constructing the BarcodeGenUPCA instance is 'display_outer_digits'.  A true
+value (the default) will cause the UPC-A image to display the outer digits 
+(number-system on left, check-digit on right).  A false value will hide them.
+
+|![Sample Barcode Image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png) | |![Sample Barcode Image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleNoOuterBarcode.png) |
+
+```javascript
+BarcodeGenUPCA('#upc-container-left', '46105217653');
+BarcodeGenUPCA('#upc-container-right', '46105217653', {display_outer_digits: false});
+```
