@@ -3,212 +3,39 @@
 <head>
 <meta charset="utf-8">
 	<title>CSS Barcode</title>
-	<link rel="stylesheet" href="./custom.css">
+  <link rel="stylesheet" href="barcode_gen_upc_a.css">
+  <link rel="stylesheet" href="index.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-	<script type="text/javascript" src="./barcodegen.js"></script>
-
-			<script type="text/javascript">
-
-			  var _gaq = _gaq || [];
-			  _gaq.push(['_setAccount', 'UA-34781094-3']);
-			  _gaq.push(['_trackPageview']);
-
-			  (function() {
-			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			  })();
-
-			</script>
-
+  <script type="text/javascript" src="barcode_gen_upc_a.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-<div id="red-strike"></div>
-<div id="upc-a">
-<div id="upc-wrap">
-<!-- the CSS structure is odd due to: http://stackoverflow.com/questions/5256533/a-space-between-inline-block-list-items -->
-<!-- begin UPC -->
-<div 
-class="m e long"></div><div 
-class="m o long"></div><div 
-class="m e long"></div><!--
-Quiet Zone
---><div class="l"><!-- 
-begin L --><div 
 
-	id="l1"><div
-
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="l2"><div
-
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="l3"><div
-	
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="l4"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="l5"><div
-
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="l6"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-end L -->
-</div></div></div><!--
-begin M
---><div 
-class="m o long"></div><div 
-class="m e long"></div><div 
-class="m o long"></div><div 
-class="m e long"></div><div 
-class="m o long"></div><!--
-end M
---><div class="r"><!-- 
-begin R --><div 
-
-	id="r1"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="r2"><div
-
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="r3"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="r4"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="r5"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-	--></div></div><div 
-	id="r6"><div
-
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m o"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"></div><div 
-		class="m e"><!--
-
-end R 
---></div></div></div><!--
-Quiet Zone
---><div 
-class="m e long"></div><div 
-class="m o long"></div><div 
-class="m e long"></div>
-<!-- end UPC -->		
-</div><!-- end upc-wrap -->
-
-<div id="number-system" class="digits">4</div>
-<div id="l-digits" class="digits">20626</div>
-<div id="r-digits" class="digits">72838</div>
-<div id="check-digit" class="digits">5</div>
-</div><!-- end upc-a -->
-
+<div id="upc-container"></div>
 <div id="query">
-	Type barcode #: <input id="barcodenum" type="text" name="barcodenum" maxlength="11" />
+	Enter barcode #: <input id="barcodenum" type="text" name="barcodenum" maxlength="12" placeholder="00000000000"/>
 
 	<p class="instructions">
-		<strong>UPC-A barcodes</strong> have 12 digits.
+    <a href="http://www.barcodeisland.com/upca.phtml"><strong>UPC-A barcodes</strong></a> have 12 digits.
 	</p>
 	<p>
- 		<a href="http://en.wikipedia.org/wiki/Universal_Product_Code">First digit is UPC code type. Next five is manufacturer number. The next five is product number. Last digit is calculated checksum.</a>
+ 		First digit is UPC code type (number system). Next five is manufacturer number. 
+    The next five is product number. Last digit is calculated check-digit.
 	</p>
 	<p>
-		This barcode generator takes 11 digits and prints 10 digits (5 manufacturer and 5 product number) below. The last digit is automatically calculated. All 12 digits are reflected in the barcode graphic.
+		This barcode generator accepts either 11 or 12 digits and prints either 10 
+    or 12 digits below the UCP image.  If 11 digits are passed to the generator
+    then the 12th (check-digit) will be automagically added.  If 12 digits are 
+    passed then that 12th digit will be validated to be the correct check-digit
+    for the first 11 digits.  The display of the outer 2 digits in the human 
+    readable text below the barcode can be enabled or disabled depending on the 
+    'display_outer_digits' value in the options hash passed to the constructor 
+    (defaults to true). All 12 digits are always reflected in the barcode graphic.
 	</p>
 	<p id="result">
-		You entered <span id="entered_bc">x</span>. The checksum digit was <span id="calc_check">y</span>. Your barcode above is encoded as <span id="all_digits">z</span>.
+		You entered <span id="entered_bc"></span>. 
+    The checksum digit was <span id="calc_check"></span>. 
+    Your barcode above is encoded as <span id="all_digits"></span>.
 	</p>
 </div>
 

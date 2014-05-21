@@ -1,0 +1,25 @@
+body {
+    background-color: #fff;
+    margin: 30px;
+    padding: 0;
+    color: #000;
+    font-family: Helvetica, Arial;
+}
+
+#upc-container {
+    width: 345px;
+}
+
+#query {
+    margin: 30px 30px 0 30px;
+    padding: 2px;
+    width: 280px;
+}
+
+.instructions {
+    color: #333;
+}
+
+#result {
+    display: none;
+}
