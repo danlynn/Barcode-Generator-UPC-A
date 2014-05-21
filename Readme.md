@@ -77,7 +77,7 @@ when constructing the BarcodeGenUPCA instance is 'display_outer_digits'.  A true
 value (the default) will cause the UPC-A image to display the outer digits 
 (number-system on left, check-digit on right).  A false value will hide them.
 
-![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png) | ![sample barcode image without outer digits](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleNoOuterBarcode.png)
+![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png) ![sample barcode image without outer digits](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleNoOuterBarcode.png)
 
 ```javascript
 BarcodeGenUPCA('#upc-container-left', '46105217653');
