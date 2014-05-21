@@ -1,6 +1,6 @@
 # A pure html/css/js UPC-A barcode generator
 
-![Sample Barcode Image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png)
+![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png)
 
 This project is a light-weight pure html, css, & javascript solution for creating UPC-A barcode 
 images on a webpage.  It consists of just a javascript and a css file to be included
@@ -55,7 +55,7 @@ $('#button-b').click(function() {
 });
 ```
 
-![Sample Barcode Image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBadBarcode.png)
+![sample invalid barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBadBarcode.png)
 
 Furthermore, you can react to invalid barcode number in your page by calling the
 valid() method.  Note that the rendered barcode itself will automagically react
@@ -77,7 +77,7 @@ when constructing the BarcodeGenUPCA instance is 'display_outer_digits'.  A true
 value (the default) will cause the UPC-A image to display the outer digits 
 (number-system on left, check-digit on right).  A false value will hide them.
 
-|![Sample Barcode Image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png) | |![Sample Barcode Image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleNoOuterBarcode.png) |
+![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png) | ![sample barcode image without outer digits](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleNoOuterBarcode.png)
 
 ```javascript
 BarcodeGenUPCA('#upc-container-left', '46105217653');
