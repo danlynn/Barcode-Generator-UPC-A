@@ -37,6 +37,7 @@ var BarcodeGenUPCA = function(container, barcode_number, options) {
 };
 
 
+// ---- instance methods ----
 BarcodeGenUPCA.prototype = {
   
   container: null, // DOM id of container to render barcode within
@@ -56,8 +57,8 @@ BarcodeGenUPCA.prototype = {
    * @param barcode_number {string} 11 digit barcode
    */
   set_barcode_number: function(barcode_number) {
-    if (barcode_number.length == 11 && this.valid(barcode_number))
-      barcode_number += this.get_check_digit(barcode_number);
+    if (barcode_number.length == 11 && BarcodeGenUPCA.valid(barcode_number))
+      barcode_number += BarcodeGenUPCA.get_check_digit(barcode_number);
     this.barcode_number = barcode_number;
     this.render();
   },
@@ -74,14 +75,14 @@ BarcodeGenUPCA.prototype = {
    */
   render: function() {
     var self = this;
-    var barcode_number = self.valid(self.barcode_number) ? self.barcode_number : '00000000000';
+    var barcode_number = BarcodeGenUPCA.valid(self.barcode_number) ? self.barcode_number : '00000000000';
     var elements = ['l1','l2','l3','l4','l5','l6','r1','r2','r3','r4','r5','r6'];
     if (elements.some(function(val) {return $(self.container).find("#" + val).size() == 0}))
-      $(self.container).html(self.barcode_template);
+      $(self.container).html(BarcodeGenUPCA.barcode_template);
     elements.forEach(function(val, i) {
-      $(self.container).find("#" + val).html(self.upc_a[barcode_number[i]]);
+      $(self.container).find("#" + val).html(BarcodeGenUPCA.upc_a[barcode_number[i]]);
     });
-    if (self.valid(self.barcode_number))
+    if (BarcodeGenUPCA.valid(self.barcode_number))
       $('#red-strike').hide();
     else {
       barcode_number = '*-NOT-VALID*'
@@ -94,8 +95,12 @@ BarcodeGenUPCA.prototype = {
     if (self.options.display_outer_digits)
       $('#check-digit').text(barcode_number.slice(11,12));
     
-  },
+  }
+};
 
+
+// ---- class methods/attributes ----
+$.extend(BarcodeGenUPCA, {
   /**
    * Calculate and return the check-digit for the specified 11 digit 
    * 'barcode_number'.  If 'barcode_number' is not numeric and exactly 11 digits
@@ -131,13 +136,13 @@ BarcodeGenUPCA.prototype = {
   valid: function(barcode_number) {
     if (/^\d{11,12}$/.test(barcode_number))
       if (barcode_number.length == 12)
-        return barcode_number.slice(11,12) == this.get_check_digit(barcode_number.slice(0,11))
+        return barcode_number.slice(11,12) == BarcodeGenUPCA.get_check_digit(barcode_number.slice(0,11))
       else
         return true;
     return false;
   },
   
-  // define barcode graphics
+  // define html template for barcode image
   // Why the html comments are needed: http://css-tricks.com/fighting-the-space-between-inline-block-elements/
   upc_a: {
     0: '<div class="m o"></div><!--\
@@ -258,5 +263,5 @@ BarcodeGenUPCA.prototype = {
     --><div id="r-digits" class="digits">00000</div><!--\
     --><div id="check-digit" class="digits">*</div>\
     </div>'
-    
-};
+  
+});
