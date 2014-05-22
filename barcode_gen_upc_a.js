@@ -24,8 +24,10 @@
  * be rendered until one is assigned by calling set_barcode_number().
  * 
  * @param container {string} id of element to contain UPC image
- * @param barcode_number {string} optional initial value
- * @param options {Hash} optional options hash to over-ride default values
+ * @param [barcode_number] {string} initial value
+ * @param [options] {Object} options hash to over-ride default values
+ * @param [options.display_outer_digits=true] {boolean} determines whether the 
+ *            outer digits are displayed
  * @constructor
  */
 var BarcodeGenUPCA = function(container, barcode_number, options) {
@@ -39,22 +41,39 @@ var BarcodeGenUPCA = function(container, barcode_number, options) {
 
 // ---- instance methods ----
 BarcodeGenUPCA.prototype = {
-  
-  container: null, // DOM id of container to render barcode within
-  
-  barcode_number: null, // 12 digit human-readable barcode
-  
+
+  /**
+   * DOM ref of container to render barcode within (eg: '#my-container')
+   * @type {string}
+   * @instance
+   */
+  container: null,
+
+  /**
+   * 12 digit human-readable barcode
+   * @type {string}
+   * @instance
+   */
+  barcode_number: null,
+
+  /**
+   * Configuration options
+   * @instance
+   * @property display_outer_digits {boolean} determines whether the outer 
+    *            digits are displayed
+   */
   options: {
     display_outer_digits: true
   },
 
   /**
-   * Assign a value to be displayed in this barcode.  The 12th digit is a check
-   * digit which will be calculated from the 11 digit 'barcode_number'.  The 
-   * barcode image will be updated with this value.  If the barcode has not been
-   * added to the DOM yet then it will be added to 'this.container'.
+   * Assign a value to be displayed in this barcode.  If provided, the 12th 
+   * digit is a check-digit which will be calculated from the 11 digit 
+   * 'barcode_number'.  The barcode image will be updated with this value.  If 
+   * the barcode has not been added to the DOM yet then it will be added to 
+   * 'this.container'.
    * 
-   * @param barcode_number {string} 11 digit barcode
+   * @param barcode_number {string} 11 (or optionally 12) digit barcode
    */
   set_barcode_number: function(barcode_number) {
     if (barcode_number.length == 11 && BarcodeGenUPCA.valid(barcode_number))
@@ -63,15 +82,11 @@ BarcodeGenUPCA.prototype = {
     this.render();
   },
   
-  // TODO: convert to use classes instead of ids in order to support multiple barcodes per page
   /**
    * Render this instance's 'barcode_number' as an image into the 'container' 
-   * element specified when constructed.  If the optional 'barcode_number' arg 
-   * is specified then it will over-ride the 'this.barcode_number' instance 
-   * attribute value - this is handy for displaying error states.
-   * 
-   * @param barcode_number {string} optionally over-ride 'barcode_number' 
-   *                      instance attribute
+   * element specified when constructed.  Normally this is called internally 
+   * when the barcode_number is changed by set_barcode_number() method.  But, 
+   * it may be useful when a page refresh is needed.
    */
   render: function() {
     var self = this;
@@ -81,12 +96,12 @@ BarcodeGenUPCA.prototype = {
     if (elements.some(function(val) {return $container.find("#" + val).size() == 0}))
       $container.html(BarcodeGenUPCA.barcode_template);
     elements.forEach(function(val, i) {
-      $container.find("." + val).html(BarcodeGenUPCA.upc_a[barcode_number[i]]);
+      $container.find("." + val).html(BarcodeGenUPCA.upc_a_digits[barcode_number[i]]);
     });
     if (BarcodeGenUPCA.valid(self.barcode_number))
       $container.find('.red-strike').hide();
     else {
-      barcode_number = '*-NOT-VALID*'
+      barcode_number = '*-NOT-VALID*';
       $container.find('.red-strike').show();
     }
     if (self.options.display_outer_digits)
@@ -109,6 +124,7 @@ $.extend(BarcodeGenUPCA, {
    * 
    * @param barcode_number {string} 11 digit barcode number
    * @returns {number} calculated check-digit - null if 'barcode_number' invalid
+   * @function BarcodeGenUPCA.get_check_digit
    */
   get_check_digit: function(barcode_number) {
     if (!/^\d{11}$/.test(barcode_number))
@@ -133,19 +149,25 @@ $.extend(BarcodeGenUPCA, {
    * 
    * @param barcode_number {string} 11 or 12 digit barcode number to be validated
    * @returns {boolean} true if valid - else false
+   * @function BarcodeGenUPCA.valid
    */
   valid: function(barcode_number) {
     if (/^\d{11,12}$/.test(barcode_number))
       if (barcode_number.length == 12)
-        return barcode_number.slice(11,12) == BarcodeGenUPCA.get_check_digit(barcode_number.slice(0,11))
+        return barcode_number.slice(11,12) == BarcodeGenUPCA.get_check_digit(barcode_number.slice(0,11));
       else
         return true;
     return false;
   },
   
-  // define html template for barcode image
-  // Why the html comments are needed: http://css-tricks.com/fighting-the-space-between-inline-block-elements/
-  upc_a: {
+  /**
+   * HTML templates for UPC-A barcode digit images.  The strange html comment 
+   * syntax below is required in order to render properly in some browsers.
+   * @see http://css-tricks.com/fighting-the-space-between-inline-block-elements/
+   * @memberof BarcodeGenUPCA
+   * @private
+   */
+  upc_a_digits: {
     0: '<div class="m o"></div><!--\
      --><div class="m o"></div><!--\
      --><div class="m o"></div><!--\
@@ -226,7 +248,12 @@ $.extend(BarcodeGenUPCA, {
      --><div class="m e"></div><!--\
      --><div class="m e"></div>'
   },
-  
+
+  /**
+   * Template of barcode html that will be inserted in 'container'.
+   * @memberof BarcodeGenUPCA
+   * @private
+   */
   barcode_template: '\
     <div class="upc-a"><!--\
     --><div class="red-strike"></div><!--\
