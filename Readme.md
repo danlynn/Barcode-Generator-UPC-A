@@ -59,7 +59,7 @@ $('#button-b').click(function() {
 
 ![sample invalid barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBadBarcode.png)
 
-Furthermore, you can react to invalid barcode number in your page by calling the
+You can check for an invalid barcode number in your page by calling the
 valid() method.  Note that the rendered barcode itself will automagically react
 to being asigned an invalid barcode number by placing a red line over the barcode
 and replacing the numbers underneath the image with "* -NOT- VALID *".  The valid()
