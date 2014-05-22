@@ -12,7 +12,7 @@ into your own project.
 
 **Try it out (demo):** http://danlynn.github.io/Barcode-Generator-UPC-A/example/
 
-**API Docs:** http://danlynn.github.io/Barcode-Generator-UPC-A/docs/
+**API Docs:** http://danlynn.github.io/Barcode-Generator-UPC-A/docs/BarcodeGenUPCA.html
 
 ## How to include into your webpage
 
