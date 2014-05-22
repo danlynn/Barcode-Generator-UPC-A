@@ -6,9 +6,9 @@ This project is a light-weight pure html, css, & javascript solution for creatin
 images on a webpage.  It consists of just a javascript and a css file to be included
 into your own project.
 
-Based on original work by rexfeng: http://cssdeck.com/labs/css-barcode-upc-a-generator 2012 
+Based on original work by rexfeng: http://cssdeck.com/labs/css-barcode-upc-a-generator 
 
-Try it out: http://danlynn.github.io/Barcode-Generator-UPC-A/example/
+**Try it out:** http://danlynn.github.io/Barcode-Generator-UPC-A/example/
 
 ## How to include into your webpage
 
@@ -54,6 +54,8 @@ $('#button-b').click(function() {
   barcode_gen_upca.set_barcode_number('40000000198');
 });
 ```
+
+## Validation
 
 ![sample invalid barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBadBarcode.png)
 
