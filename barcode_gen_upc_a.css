@@ -56,7 +56,7 @@
 }
 
 .digits {
-    font-family: monospace, Courier;
+    font-family: monospace, Courier, sans-serif;
     font-size: 2em;
     display: inline;
     position: relative;
