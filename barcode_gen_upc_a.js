@@ -75,25 +75,26 @@ BarcodeGenUPCA.prototype = {
    */
   render: function() {
     var self = this;
+    var $container = $(self.container);
     var barcode_number = BarcodeGenUPCA.valid(self.barcode_number) ? self.barcode_number : '00000000000';
     var elements = ['l1','l2','l3','l4','l5','l6','r1','r2','r3','r4','r5','r6'];
-    if (elements.some(function(val) {return $(self.container).find("#" + val).size() == 0}))
-      $(self.container).html(BarcodeGenUPCA.barcode_template);
+    if (elements.some(function(val) {return $container.find("#" + val).size() == 0}))
+      $container.html(BarcodeGenUPCA.barcode_template);
     elements.forEach(function(val, i) {
-      $(self.container).find("#" + val).html(BarcodeGenUPCA.upc_a[barcode_number[i]]);
+      $container.find("." + val).html(BarcodeGenUPCA.upc_a[barcode_number[i]]);
     });
     if (BarcodeGenUPCA.valid(self.barcode_number))
-      $('#red-strike').hide();
+      $container.find('.red-strike').hide();
     else {
       barcode_number = '*-NOT-VALID*'
-      $('#red-strike').show();
+      $container.find('.red-strike').show();
     }
     if (self.options.display_outer_digits)
-      $('#number-system').text(barcode_number.slice(0,1));
-    $('#l-digits').text(barcode_number.slice(1,6));
-    $('#r-digits').text(barcode_number.slice(6,11));
+      $container.find('.number-system').text(barcode_number.slice(0,1));
+    $container.find('.l-digits').text(barcode_number.slice(1,6));
+    $container.find('.r-digits').text(barcode_number.slice(6,11));
     if (self.options.display_outer_digits)
-      $('#check-digit').text(barcode_number.slice(11,12));
+      $container.find('.check-digit').text(barcode_number.slice(11,12));
     
   }
 };
@@ -227,19 +228,19 @@ $.extend(BarcodeGenUPCA, {
   },
   
   barcode_template: '\
-    <div id="upc-a"><!--\
-    --><div id="red-strike"></div><!--\
-    --><div id="upc-wrap"><!--\
+    <div class="upc-a"><!--\
+    --><div class="red-strike"></div><!--\
+    --><div class="upc-wrap"><!--\
       --><div class="m e long"></div><!--\
       --><div class="m o long"></div><!--\
       --><div class="m e long"></div><!--\
       --><div class="l"><!--\
-        --><div id="l1"></div><!--\
-        --><div id="l2"></div><!--\
-        --><div id="l3"></div><!--\
-        --><div id="l4"></div><!--\
-        --><div id="l5"></div><!--\
-        --><div id="l6"></div><!--\
+        --><div class="l1"></div><!--\
+        --><div class="l2"></div><!--\
+        --><div class="l3"></div><!--\
+        --><div class="l4"></div><!--\
+        --><div class="l5"></div><!--\
+        --><div class="l6"></div><!--\
       --></div><!--\
       --><div class="m o long"></div><!--\
       --><div class="m e long"></div><!--\
@@ -247,21 +248,21 @@ $.extend(BarcodeGenUPCA, {
       --><div class="m e long"></div><!--\
       --><div class="m o long"></div><!--\
       --><div class="r"><!--\
-        --><div id="r1"></div><!--\
-        --><div id="r2"></div><!--\
-        --><div id="r3"></div><!--\
-        --><div id="r4"></div><!--\
-        --><div id="r5"></div><!--\
-        --><div id="r6"></div><!--\
+        --><div class="r1"></div><!--\
+        --><div class="r2"></div><!--\
+        --><div class="r3"></div><!--\
+        --><div class="r4"></div><!--\
+        --><div class="r5"></div><!--\
+        --><div class="r6"></div><!--\
       --></div><!--\
       --><div class="m e long"></div><!--\
       --><div class="m o long"></div><!--\
       --><div class="m e long"></div><!--\
     --></div><!--\
-    --><div id="number-system" class="digits">*</div><!--\
-    --><div id="l-digits" class="digits">00000</div><!--\
-    --><div id="r-digits" class="digits">00000</div><!--\
-    --><div id="check-digit" class="digits">*</div>\
+    --><div class="number-system digits">*</div><!--\
+    --><div class="l-digits digits">00000</div><!--\
+    --><div class="r-digits digits">00000</div><!--\
+    --><div class="check-digit digits">*</div>\
     </div>'
   
 });
