@@ -2,13 +2,17 @@
 
 ![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png)
 
+## Introduction
+
 This project is a light-weight pure html, css, & javascript solution for creating UPC-A barcode 
 images on a webpage.  It consists of just a javascript and a css file to be included
 into your own project.
 
 Based on original work by rexfeng: http://cssdeck.com/labs/css-barcode-upc-a-generator 
 
-**Try it out:** http://danlynn.github.io/Barcode-Generator-UPC-A/example/
+**Try it out (demo):** http://danlynn.github.io/Barcode-Generator-UPC-A/example/
+
+**API Docs:** http://danlynn.github.io/Barcode-Generator-UPC-A/docs/
 
 ## How to include into your webpage
 
