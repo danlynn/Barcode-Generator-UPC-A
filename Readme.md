@@ -6,7 +6,7 @@
 
 This project is a light-weight pure html, css, & javascript solution for creating UPC-A barcode 
 images on a webpage.  It consists of just a javascript and a css file to be included
-into your own project.
+into your own project.  The javascript file is wrapped as an AMD module.
 
 **Based on original work by rexfeng:** [http://cssdeck.com/labs/css-barcode-upc-a-generator](http://cssdeck.com/labs/css-barcode-upc-a-generator) 
 
