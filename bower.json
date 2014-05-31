@@ -1,0 +1,25 @@
+{
+  "name": "Barcode-Generator-UPC-A",
+  "version": "0.1.0",
+  "homepage": "https://github.com/danlynn/Barcode-Generator-UPC-A",
+  "authors": [
+    "Dan Lynn <git@danlynn.org>"
+  ],
+  "description": "A pure html/css/javascript solution for creating UPC-A barcode images on a webpage",
+  "main": "barcode_gen_upc_a.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "barcode"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "Readme.md",
+    "example"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.2"
+  }
+}
