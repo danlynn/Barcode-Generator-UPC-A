@@ -32,16 +32,16 @@ project.
 First, install using bower:
 
 ```console
-  $ bower install Barcode-Generator-UPC-A
-  bower cached        git://github.com/danlynn/Barcode-Generator-UPC-A.git#0.1.0
-  bower validate      0.1.0 against git://github.com/danlynn/Barcode-Generator-UPC-A.git#*
-  bower cached        git://github.com/jquery/jquery.git#2.1.1
-  bower validate      2.1.1 against git://github.com/jquery/jquery.git#>=1.7.2
-  bower install       Barcode-Generator-UPC-A#0.1.0
-  bower install       jquery#2.1.1
-  
-  Barcode-Generator-UPC-A#0.1.0 www/vendor/bower_components/Barcode-Generator-UPC-A
-  └── jquery#2.1.1
+$ bower install Barcode-Generator-UPC-A
+bower cached        git://github.com/danlynn/Barcode-Generator-UPC-A.git#0.1.0
+bower validate      0.1.0 against git://github.com/danlynn/Barcode-Generator-UPC-A.git#*
+bower cached        git://github.com/jquery/jquery.git#2.1.1
+bower validate      2.1.1 against git://github.com/jquery/jquery.git#>=1.7.2
+bower install       Barcode-Generator-UPC-A#0.1.0
+bower install       jquery#2.1.1
+
+Barcode-Generator-UPC-A#0.1.0 www/vendor/bower_components/Barcode-Generator-UPC-A
+└── jquery#2.1.1
 ```
 
 Note that jquery is a dependency and it was also automatically installed.
