@@ -9,11 +9,11 @@ images on a webpage.  It consists of just a javascript and a css file to be incl
 into your own project.  
 
 The javascript file is wrapped as an AMD module.  If you aren't using require.js 
-or similar dependency management frameworks then try using the non-AMD release.  
-The release description includes instructions and examples on how to include it 
+or similar dependency management frameworks then try using the non-AMD release. The 
+release description includes instructions and examples on how to include it 
 into your project. 
 
-**Non-AMD Relase:** [https://github.com/danlynn/Barcode-Generator-UPC-A/releases/tag/non-amd-release]
+**Non-AMD Relase:** [http://github.com/danlynn/Barcode-Generator-UPC-A/releases/tag/non-amd-release]
 
 **Based on original work by rexfeng:** [http://cssdeck.com/labs/css-barcode-upc-a-generator](http://cssdeck.com/labs/css-barcode-upc-a-generator) 
 
@@ -26,10 +26,11 @@ into your project.
 The code can be included into your project by either checking out this repo or
 by using [bower](http://bower.io).  We'll cover installation using bower below.
 But, if you don't want to use bower then you can easily adapt these instructions
-by checking out this repo and copying the css and js files manually into your
+for cloning this repo and copying the css and js files manually into your
 project.
 
-First, install using bower:
+First, install using bower. Note that jquery is a dependency and it is also 
+automatically installed (if not already installed as a bower package).
 
 ```console
 $ bower install Barcode-Generator-UPC-A
@@ -43,8 +44,6 @@ bower install       jquery#2.1.1
 Barcode-Generator-UPC-A#0.1.0 www/vendor/bower_components/Barcode-Generator-UPC-A
 └── jquery#2.1.1
 ```
-
-Note that jquery is a dependency and it was also automatically installed.
 
 Next, make sure that your require.js config includes the bower_components dir.
 
