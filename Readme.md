@@ -6,7 +6,14 @@
 
 This project is a light-weight pure html, css, & javascript solution for creating UPC-A barcode 
 images on a webpage.  It consists of just a javascript and a css file to be included
-into your own project.  The javascript file is wrapped as an AMD module.
+into your own project.  
+
+The javascript file is wrapped as an AMD module.  If you aren't using require.js 
+or similar dependency management frameworks then try using the non-AMD release.  
+The release description includes instructions and examples on how to include it 
+into your project. 
+
+**Non-AMD Relase:** [https://github.com/danlynn/Barcode-Generator-UPC-A/releases/tag/non-amd-release]
 
 **Based on original work by rexfeng:** [http://cssdeck.com/labs/css-barcode-upc-a-generator](http://cssdeck.com/labs/css-barcode-upc-a-generator) 
 
@@ -14,16 +21,50 @@ into your own project.  The javascript file is wrapped as an AMD module.
 
 **API Docs:** [http://danlynn.github.io/Barcode-Generator-UPC-A/docs/BarcodeGenUPCA.html](http://danlynn.github.io/Barcode-Generator-UPC-A/docs/BarcodeGenUPCA.html)
 
-## How to include into your webpage
+## How to include into your webpage using bower
 
-First include the following css and js files into the head of your page.  Note 
-that jquery is required:
+The code can be included into your project by either checking out this repo or
+by using [bower](http://bower.io).  We'll cover installation using bower below.
+But, if you don't want to use bower then you can easily adapt these instructions
+by checking out this repo and copying the css and js files manually into your
+project.
+
+First, install using bower:
+
+```console
+  $ bower install Barcode-Generator-UPC-A
+  bower cached        git://github.com/danlynn/Barcode-Generator-UPC-A.git#0.1.0
+  bower validate      0.1.0 against git://github.com/danlynn/Barcode-Generator-UPC-A.git#*
+  bower cached        git://github.com/jquery/jquery.git#2.1.1
+  bower validate      2.1.1 against git://github.com/jquery/jquery.git#>=1.7.2
+  bower install       Barcode-Generator-UPC-A#0.1.0
+  bower install       jquery#2.1.1
+  
+  Barcode-Generator-UPC-A#0.1.0 www/vendor/bower_components/Barcode-Generator-UPC-A
+  └── jquery#2.1.1
+```
+
+Note that jquery is a dependency and it was also automatically installed.
+
+Next, make sure that your require.js config includes the bower_components dir.
+
+```javascript
+require.config({
+    baseUrl: 'js',
+    paths: {
+      'bower': 'bower_components'
+    }
+});
+require(['index'])
+```
+
+Include the css file into the head of your page.  It can be found inside the
+Barcode-Generator-UPC-A bower package.
 
 ```html
 <head>
-  <link rel="stylesheet" href="../barcode_gen_upc_a.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-  <script type="text/javascript" src="../barcode_gen_upc_a.js"></script>
+  <link rel="stylesheet" href="../bower_components/Barcode-Generator-UPC-A/barcode_gen_upc_a.css">
+  <script src="js/require.min.js" data-main="js/main"></script>
 </head>
 ```
 
