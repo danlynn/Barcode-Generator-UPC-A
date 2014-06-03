@@ -77,10 +77,16 @@ in the next step:
 </body>
 ```
 
-Then simply execute the following javascript once your page is loaded.
+Then simply call the BarcodeGenUPCA constructor once your page is loaded.  Make 
+sure that you require the barcode_gen_upc_a module first by wrapping your code 
+within a define or require block.
 
 ```javascript
-BarcodeGenUPCA('#upc-container', '46105217653');
+define(['bower/barcode_gen_upc_a'], function(BarcodeGenUPCA) {
+  // ...
+  BarcodeGenUPCA('#upc-container', '46105217653');
+  // ...
+});
 ```
 
 If you want to dynamically change the barcode later then simply store the new
