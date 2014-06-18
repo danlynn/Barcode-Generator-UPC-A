@@ -8,12 +8,12 @@ This project is a light-weight pure html, css, & javascript solution for creatin
 images on a webpage.  It consists of just a javascript and a css file to be included
 into your own project.
 
-The javascript file is wrapped as an AMD module.  If you aren't using require.js
-or similar dependency management frameworks then try using the non-AMD release. The
-release description includes instructions and examples on how to include it
-into your project.
+The javascript file is wrapped as an AMD module.  If you aren't using (require.js)[http://requirejs.org]
+or similar dependency management frameworks then try using the (non-AMD release)[https://github.com/danlynn/Barcode-Generator-UPC-A/tree/non-amd-release]. The
+non-AMD release's Readme includes instructions and examples on how to include it
+into your project without a dependency manager.
 
-**Non-AMD Relase:** [http://github.com/danlynn/Barcode-Generator-UPC-A/releases/tag/non-amd-release]
+**Non-AMD Relase:** [https://github.com/danlynn/Barcode-Generator-UPC-A/tree/non-amd-release]
 
 **Based on original work by rexfeng:** [http://cssdeck.com/labs/css-barcode-upc-a-generator](http://cssdeck.com/labs/css-barcode-upc-a-generator)
 
