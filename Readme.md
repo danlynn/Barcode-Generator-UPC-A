@@ -4,18 +4,18 @@
 
 ## Introduction
 
-This project is a light-weight pure html, css, & javascript solution for creating UPC-A barcode 
+This project is a light-weight pure html, css, & javascript solution for creating UPC-A barcode
 images on a webpage.  It consists of just a javascript and a css file to be included
-into your own project.  
+into your own project.
 
-The javascript file is wrapped as an AMD module.  If you aren't using require.js 
-or similar dependency management frameworks then try using the non-AMD release. The 
-release description includes instructions and examples on how to include it 
-into your project. 
+The javascript file is wrapped as an AMD module.  If you aren't using require.js
+or similar dependency management frameworks then try using the non-AMD release. The
+release description includes instructions and examples on how to include it
+into your project.
 
 **Non-AMD Relase:** [http://github.com/danlynn/Barcode-Generator-UPC-A/releases/tag/non-amd-release]
 
-**Based on original work by rexfeng:** [http://cssdeck.com/labs/css-barcode-upc-a-generator](http://cssdeck.com/labs/css-barcode-upc-a-generator) 
+**Based on original work by rexfeng:** [http://cssdeck.com/labs/css-barcode-upc-a-generator](http://cssdeck.com/labs/css-barcode-upc-a-generator)
 
 **Try the demo:** [http://danlynn.github.io/Barcode-Generator-UPC-A/example/](http://danlynn.github.io/Barcode-Generator-UPC-A/example/)
 
@@ -29,7 +29,7 @@ But, if you don't want to use bower then you can easily adapt these instructions
 for cloning this repo and copying the css and js files manually into your
 project.
 
-First, install using bower. Note that jquery is a dependency and it is also 
+First, install using bower. Note that jquery is a dependency and it is also
 automatically installed (if not already installed as a bower package).
 
 ```console
@@ -67,8 +67,8 @@ Barcode-Generator-UPC-A bower package.
 </head>
 ```
 
-Next, add a div container to your page where you would like to have the UPC-A 
-barcode inserted.  Note that the id of the div will be passed to the javascript 
+Next, add a div container to your page where you would like to have the UPC-A
+barcode inserted.  Note that the id of the div will be passed to the javascript
 in the next step:
 
 ```html
@@ -77,8 +77,8 @@ in the next step:
 </body>
 ```
 
-Then simply call the BarcodeGenUPCA constructor once your page is loaded.  Make 
-sure that you require the barcode_gen_upc_a module first by wrapping your code 
+Then simply call the BarcodeGenUPCA constructor once your page is loaded.  Make
+sure that you require the barcode_gen_upc_a module first by wrapping your code
 within a define or require block.
 
 ```javascript
@@ -126,7 +126,7 @@ if (!BarcodeGenUPCA.valid(barcode_number))
 
 Currently the only configuration option that can be passed into the options hash
 when constructing the BarcodeGenUPCA instance is 'display_outer_digits'.  A true
-value (the default) will cause the UPC-A image to display the outer digits 
+value (the default) will cause the UPC-A image to display the outer digits
 (number-system on left, check-digit on right).  A false value will hide them.
 
 ![sample barcode image](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleBarcode.png) ![sample barcode image without outer digits](http://danlynn.github.io/Barcode-Generator-UPC-A/images/SampleNoOuterBarcode.png)
@@ -134,4 +134,35 @@ value (the default) will cause the UPC-A image to display the outer digits
 ```javascript
 BarcodeGenUPCA('#upc-container-left', '46105217653');
 BarcodeGenUPCA('#upc-container-right', '46105217653', {display_outer_digits: false});
+```
+
+The height of the barcode is contrained to between 124px and 217px in order to match UPC-A barcode specs.  Setting the height of the div container on your page where the barcode will be inserted controls the height of the barcode.
+
+```html
+<body>
+  <div id="upc-container"></div>
+</body>
+```
+
+```css
+#upc-container {
+    height: 217px;
+}
+```
+
+If you want to exceed these height constraints then you can remove the limits on height with the following css:
+
+```css
+.upc-wrap {
+    max-height: inherit;
+    min-height: inherit;
+}
+```
+
+Rounded corners can be added to the barcode (as seen in the [demo](http://danlynn.github.io/Barcode-Generator-UPC-A/example/)) with the following css:
+
+```css
+.upc-wrap {
+    border-radius: 10px;
+}
 ```
