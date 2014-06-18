@@ -17,7 +17,8 @@
     height: auto;
     top: 0;
     bottom: 0;
-    margin: 5px 30px 26px; /* quiet zones on left & right + room for .upc-digits */
+    left: 50%; /* center when squeezed (with margin-right: -142px) */
+    margin: 5px 30px 26px -142px; /* quiet zones on left & right + room for .upc-digits */
 }
 
 .upc-bars {
