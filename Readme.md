@@ -166,3 +166,28 @@ Rounded corners can be added to the barcode (as seen in the [demo](http://danlyn
     border-radius: 10px;
 }
 ```
+
+The barcode is normally 345px wide.  If you need to display a barcode on an 
+iPhone screen in portrait (vertical) orientation then the barcode will 
+automagically center within the width of the smaller container div.  You can 
+test this by setting the container div to the width of the iPhone screen:
+
+```css
+#upc-container {
+    width: 320px;
+}
+```
+
+If you are displaying the smaller number-system and check-digit numbers then 
+you may notice that they are touching the edges of both sides of the screen. 
+They can be moved inward 5px each with the following css:
+
+```css
+.number-system {
+    left: -15px
+}
+
+.check-digit {
+    right: -22px
+}
+```
