@@ -124,6 +124,8 @@ if (!BarcodeGenUPCA.valid(barcode_number))
 
 ## Configuration Options
 
+### Show/Hide outer digits
+
 Currently the only configuration option that can be passed into the options hash
 when constructing the BarcodeGenUPCA instance is 'display_outer_digits'.  A true
 value (the default) will cause the UPC-A image to display the outer digits
@@ -135,6 +137,8 @@ value (the default) will cause the UPC-A image to display the outer digits
 BarcodeGenUPCA('#upc-container-left', '46105217653');
 BarcodeGenUPCA('#upc-container-right', '46105217653', {display_outer_digits: false});
 ```
+
+### Variable Height
 
 The height of the barcode is contrained to between 124px and 217px in order to match UPC-A barcode specs.  Setting the height of the div container on your page where the barcode will be inserted controls the height of the barcode.
 
@@ -159,6 +163,8 @@ If you want to exceed these height constraints then you can remove the limits on
 }
 ```
 
+### Rounded Corners
+
 Rounded corners can be added to the barcode (as seen in the [demo](http://danlynn.github.io/Barcode-Generator-UPC-A/example/)) with the following css:
 
 ```css
@@ -166,6 +172,8 @@ Rounded corners can be added to the barcode (as seen in the [demo](http://danlyn
     border-radius: 10px;
 }
 ```
+
+### Smaller Widths
 
 The barcode is normally 345px wide.  If you need to display a barcode on an 
 iPhone screen in portrait (vertical) orientation then the barcode will 
