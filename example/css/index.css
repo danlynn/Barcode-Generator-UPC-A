@@ -4,16 +4,29 @@ body {
     padding: 0;
     color: #000;
     font-family: Helvetica, Arial;
+    width: 385px;
+}
+
+.page {
+    border: solid 1px grey;
+    margin: 30px auto;
 }
 
 #upc-container {
     width: 345px;
+    height: 217px;
+    background-color: grey;
+    padding: 20px;
+}
+
+.upc-wrap {
+    border-radius: 10px;
 }
 
 #query {
-    margin: 30px 30px 0 30px;
+    margin: 30px 20px 0 20px;
     padding: 2px;
-    width: 280px;
+    width: 345px;
 }
 
 .instructions {
