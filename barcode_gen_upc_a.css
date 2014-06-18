@@ -10,6 +10,7 @@
     background-color: white;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden;
 }
 
 .upc-a {
