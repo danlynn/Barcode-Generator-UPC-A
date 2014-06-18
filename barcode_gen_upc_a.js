@@ -256,43 +256,47 @@ define(['jquery'], function($) {
      * @memberof BarcodeGenUPCA
      * @private
      */
-    barcode_template: '\
-      <div class="upc-a"><!--\
-      --><div class="red-strike"></div><!--\
+    barcode_template: '<!--\
       --><div class="upc-wrap"><!--\
-        --><div class="m e long"></div><!--\
-        --><div class="m o long"></div><!--\
-        --><div class="m e long"></div><!--\
-        --><div class="l"><!--\
-          --><div class="l1"></div><!--\
-          --><div class="l2"></div><!--\
-          --><div class="l3"></div><!--\
-          --><div class="l4"></div><!--\
-          --><div class="l5"></div><!--\
-          --><div class="l6"></div><!--\
+        --><div class="upc-a"><!--\
+          --><div class="red-strike"></div><!--\
+          --><div class="upc-bars"><!--\
+            --><div class="m e long"></div><!--\
+            --><div class="m o long"></div><!--\
+            --><div class="m e long"></div><!--\
+            --><div class="l"><!--\
+              --><div class="l1 short"></div><!--\
+              --><div class="l2 short"></div><!--\
+              --><div class="l3 short"></div><!--\
+              --><div class="l4 short"></div><!--\
+              --><div class="l5 short"></div><!--\
+              --><div class="l6 short"></div><!--\
+            --></div><!--\
+            --><div class="m o long"></div><!--\
+            --><div class="m e long"></div><!--\
+            --><div class="m o long"></div><!--\
+            --><div class="m e long"></div><!--\
+            --><div class="m o long"></div><!--\
+            --><div class="r"><!--\
+              --><div class="r1 short"></div><!--\
+              --><div class="r2 short"></div><!--\
+              --><div class="r3 short"></div><!--\
+              --><div class="r4 short"></div><!--\
+              --><div class="r5 short"></div><!--\
+              --><div class="r6 short"></div><!--\
+            --></div><!--\
+            --><div class="m e long"></div><!--\
+            --><div class="m o long"></div><!--\
+            --><div class="m e long"></div><!--\
+          --></div><!--\
+          --><div class="upc-digits"><!--\
+            --><div class="number-system digits">*</div><!--\
+            --><div class="l-digits digits">00000</div><!--\
+            --><div class="r-digits digits">00000</div><!--\
+            --><div class="check-digit digits">*</div><!--\
+          --></div><!--\
         --></div><!--\
-        --><div class="m o long"></div><!--\
-        --><div class="m e long"></div><!--\
-        --><div class="m o long"></div><!--\
-        --><div class="m e long"></div><!--\
-        --><div class="m o long"></div><!--\
-        --><div class="r"><!--\
-          --><div class="r1"></div><!--\
-          --><div class="r2"></div><!--\
-          --><div class="r3"></div><!--\
-          --><div class="r4"></div><!--\
-          --><div class="r5"></div><!--\
-          --><div class="r6"></div><!--\
-        --></div><!--\
-        --><div class="m e long"></div><!--\
-        --><div class="m o long"></div><!--\
-        --><div class="m e long"></div><!--\
-      --></div><!--\
-      --><div class="number-system digits">*</div><!--\
-      --><div class="l-digits digits">00000</div><!--\
-      --><div class="r-digits digits">00000</div><!--\
-      --><div class="check-digit digits">*</div>\
-      </div>'
+      --></div>'
     
   });
   

@@ -1,26 +1,48 @@
 /* css barcode */
 /* by rexfeng 2012 */
 
-.upc-a {
-    margin: 0 30px 0 30px; /* quiet zones on left & right (10px *3) */
+.upc-wrap {
     position: relative;
+    width: auto;
+    height: 100%;
+    max-height: 217px;
+    min-height: 124px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.upc-wrap {
-    width: 285px; /* 95 *3 */
-    height: 186px; /* 62 *3 */
+.upc-a {
+    position: absolute;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    margin: 5px 30px 26px; /* quiet zones on left & right + room for .upc-digits */
+}
+
+.upc-bars {
+    width: 285px; /* 95 * 3 */
+    height: 100%; /* 62 * 3 = 186px */
+}
+
+.upc-digits {
+    text-wrap: none;
 }
 
 .m {
     /* module 1px *3 width */
     width: 3px;
-    height: 179px; /* 186 / 244 * 235 = 179px */
+    height: 100%; /* 186 / 244 * 235 = 179px */
     display: inline-block;
     vertical-align: top;
 }
 
 .long {
-    height: 186px;
+    height: 100%; /* 186px */
+}
+
+.short {
+    height: 95%; /* 179px */
 }
 
 .o {
@@ -33,10 +55,11 @@
 
 .l {
     display: inline-block;
-}
+    height: 100%}
 
 .r {
     display: inline-block;
+    height: 100%;
 }
 
 .r .o.m {
@@ -65,7 +88,7 @@
 }
 
 .l-digits {
-    margin-left: 20px;
+    margin-left: 3px;
 }
 
 .r-digits {
@@ -73,24 +96,20 @@
 }
 
 .number-system {
-    position: absolute;
-    top: 183px;
-    left: -21px;
+    left: -20px;
     font-size: 1.5em;
 }
 
 .check-digit {
-    position: absolute;
-    top: 183px;
-    left: 292px;
     font-size: 1.5em;
+    right: -27px;
 }
 
 .red-strike {
+    position: absolute;
+    top: 45%;
     width: 285px;
     height: 4px;
     background-color: red;
-    position: absolute;
-    margin: 92px 0 0 0;
     display: none;
 }
