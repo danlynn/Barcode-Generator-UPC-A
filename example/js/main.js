@@ -2,7 +2,7 @@ require.config({
   baseUrl: 'js',
 
   paths: {
-    'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery',
+    'jquery': 'https://code.jquery.com/jquery-3.4.1',
     'vendor': '../..'    // where barcode_gen_upc_a.js can be found
   }
 });

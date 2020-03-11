@@ -95,7 +95,7 @@ define(['jquery'], function($) {
       var $container = $(self.container);
       var barcode_number = BarcodeGenUPCA.valid(self.barcode_number) ? self.barcode_number : '000000000000';
       var elements = ['l1','l2','l3','l4','l5','l6','r1','r2','r3','r4','r5','r6'];
-      if (elements.some(function(val) {return $container.find("#" + val).size() == 0}))
+      if (elements.some(function(val) {return $container.find("#" + val).length == 0}))
         $container.html(BarcodeGenUPCA.barcode_template);
       elements.forEach(function(val, i) {
         $container.find("." + val).html(BarcodeGenUPCA.upc_a_digits[barcode_number[i]]);
